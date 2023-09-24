@@ -27,3 +27,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.status-icon {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+}
+</style>
