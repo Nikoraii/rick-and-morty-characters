@@ -9,7 +9,7 @@
 
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
-import axios from 'axios';
+import getCharacters from './api/getCharacters.js';
 
 const characters = ref(null);
 
@@ -44,18 +44,6 @@ export default {
       if (element.getBoundingClientRect().bottom <= window.innerHeight) {
         loadMore();
       }
-    }
-
-    let api = 'https://rickandmortyapi.com/api/character';
-
-    const getCharacters = async () => {
-        const characters = await axios.get(api);
-        try {
-            api = characters.data.info.next;
-            return characters.data.results;
-        } catch(error) {
-            console.error(error);
-        }
     }
 
     return {
