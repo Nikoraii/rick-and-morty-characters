@@ -14,6 +14,8 @@
           <span class="mt-2 card-text">
             {{ character.species }} <span v-if="character.type"> - {{ character.type }}</span>
           </span>
+          <p class="mt-2 card-text capitalize">&#x1F4CD; {{ character.location.name }}</p>
+          <p class=" text-slate-500 text-sm">Created at: {{ character.created }}</p>
     </div>
   </div>
 </template>
