@@ -1,10 +1,10 @@
 <template>
   <h1>Test</h1>
-  <ul ref="scrollComponent">
-    <li v-for="character in characters" :key="character.id">
-      <h1>{{ character.name }}</h1>
-    </li>
-  </ul>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" ref="scrollComponent">
+    <div v-for="character in characters" :key="character.id">
+      <div>{{ character.name }}</div>
+    </div>
+  </div>
 </template>
 
 <script>
