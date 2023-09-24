@@ -11,6 +11,9 @@
             'bg-gray-400': character.status === 'unknown'
           }">
           </span> {{ character.status }}</p>
+          <span class="mt-2 card-text">
+            {{ character.species }} <span v-if="character.type"> - {{ character.type }}</span>
+          </span>
     </div>
   </div>
 </template>
