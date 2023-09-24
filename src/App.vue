@@ -1,22 +1,25 @@
 <template>
-  <h1>Test</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" ref="scrollComponent">
-    <div v-for="character in characters" :key="character.id" class="bg-slate-800 rounded-md text-slate-50 border border-gray-500">
-      <img class="mx-auto w-full rounded-t-md" :src="character.image">
-      <div id="info" class="p-2">
-          <h2 class="text-3xl">{{ character.name }}</h2>
-      </div>
+  <div id="main" class="py-3 px-2">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" ref="scrollComponent">
+      <character-component
+      v-for="character in characters"
+      :character="character"
+      :key="character.id"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
-import getCharacters from './api/getCharacters.js';
-
+import getCharacters from '../src/api/getCharacters.js';
+import CharacterComponent from '@/components/CharacterComponent.vue';
 const characters = ref(null);
 
 export default {
+  components: {
+    CharacterComponent,
+  },
   setup() {
     const scrollComponent = ref(null);
 
