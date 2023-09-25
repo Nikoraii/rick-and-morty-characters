@@ -1,4 +1,5 @@
 <template>
+  <title-component/>
   <div id="main" class="py-3 px-2">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" ref="scrollComponent">
       <character-component
@@ -13,12 +14,14 @@
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
 import getCharacters from '../src/api/getCharacters.js';
-import CharacterComponent from '@/components/CharacterComponent.vue';
+import CharacterComponent from './components/CharacterComponent.vue';
+import TitleComponent from './components/TitleComponent.vue';
 const characters = ref(null);
 
 export default {
   components: {
     CharacterComponent,
+    TitleComponent
   },
   setup() {
     const scrollComponent = ref(null);
